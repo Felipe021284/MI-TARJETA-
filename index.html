@@ -175,9 +175,10 @@ a{
 }
 
 /* Botón catálogo */
+
 .CATALOGO{
   position: relative;
-  left:65px;
+/*  left:65px;*/
   text-align:center;
   color:white;
   text-decoration:none;
@@ -265,33 +266,75 @@ a{
   }
   
   
-  /*efecto enlaces*/
+ /* Contenedor general de los botones */
 .CATALOGO {
-   /* margin: 20px;*/
-    font-size: 20px;
-    opacity: 0;
-  }
+  font-size: 20px;
+  margin: 20px auto;       /* centra horizontalmente */
+  text-align: center;
+  width: fit-content;
+  position: relative;
+  opacity: 0;
+  border-radius: 20px;
+  border: 1px solid white;
+  box-shadow: 0px 0px 10px 1px white;
+  text-shadow: -2px 1px purple;
+  background: linear-gradient(-45deg, white, blue, black, blue, white);
+  background-size: 300%;
+  animation: bg-animation 20s infinite linear; /* gradiente animado */
+}
 
-  /* Animación desde la izquierda */
-  .izquierda {
-    animation: entrarIzquierda 1s forwards ease-out;
-  }
+/* Estilo de los enlaces con zoom constante */
+.CATALOGO a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #fff;
+/*  padding: 10px 20px;"*/
+  border-radius: 8px;
+  transition: transform 0.3s;
+  animation: zoomPulse 2s infinite ease-in-out; /* zoom constante */
+}
 
-  @keyframes entrarIzquierda {
-    0%   { transform: translateX(-100%); opacity: 0; }
-    100% { transform: translateX(0); opacity: 1; }
-  }
+.CATALOGO a:hover {
+  transform: scale(1.15);
+}
 
-  /* Animación desde la derecha */
-  .derecha {
-    animation: entrarDerecha 1s forwards ease-out;
-    animation-delay: 0.5s; /* entra después para dar efecto escalonado */
-  }
+/* Entrada desde la izquierda */
+.izquierda {
+  animation: entrarIzquierda 1s forwards ease-out;
+}
 
-  @keyframes entrarDerecha {
-    0%   { transform: translateX(100%); opacity: 0; }
-    100% { transform: translateX(0); opacity: 1; }
-  }
+@keyframes entrarIzquierda {
+  0%   { transform: translateX(-100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+/* Entrada desde la derecha */
+.derecha {
+  animation: entrarDerecha 1s forwards ease-out;
+  animation-delay: 0.5s;
+}
+
+@keyframes entrarDerecha {
+  0%   { transform: translateX(100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+/* Fondo animado */
+@keyframes bg-animation {
+  0%   { background-position: left; }
+  50%  { background-position: right; }
+  100% { background-position: left; }
+}
+
+/* Zoom infinito aplicado al enlace */
+@keyframes zoomPulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+
   </style>
 </head>
 <body>
@@ -302,31 +345,17 @@ a{
     </div>
     
     <div class="description">
-      <!--h2>LUZNET</h2-->
+    
+      
       <h2 id="matrix-text" data-text="LUZNET"></h2>
       <h4 id="wave-text">DISEÑO WEB</h4>
-      <!--h4>DISEÑO WEB</h4-->
-      <!--p>Invitaciones digitales que celebran cada momento … porque tus eventos merecen otro nivel.</p-->
+     
       <p id="zoom-text">Invitaciones digitales que celebran cada momento ... porque tus eventos merecen otro nivel.</p>
       
     </div>
-    <!--div class="contact">
-      <a href="tel:3312381872"><i class="fa fa-phone"></i></a>
-      <a href="https://wa.me/qr/K3HPFDZLSFINP1"><i class="fa fa-whatsapp"></i></a>
-      <a href="https://www.facebook.com/Digital-World-100310082725612/"><i class="fa fa-facebook"></i></a>
-      <a href="http://tiktok.com/@felipemartinez5483"><i class="fa fa-tiktok"></i></a>
-      <a href="https://www.instagram.com/invites/contact/?i=1qfx13l6t6gy5&utm_content=g1iuoqt"><i class="fa fa-instagram"></i></a>
-      <a href="https://youtube.com/c/FELIPEMARTINEZCOMPOSITOR"><i class="fa fa-youtube"></i></a>
-      <a href="mailto:felipemartinez84@live.com.mx?Subject=bienvenido"><i class="fa fa-envelope-open"></i></a>
-    </div-->
+   
     
-    <!--div class="CATALOGO">
-      <a href="https://wa.me/523312281872?text=Hola,%20quiero%20más%20información."><i class="fa fa-whatsapp"> CONTACTAME</i></a>
-</div>
-    <div class="CATALOGO">
-      <a href="https://felipe021284.github.io/INVITACI-N-DIGITAL/?v=2
-      "><i class="fa fa-hand-o-right"> CATALOGO</i></a>
-    </div-->
+    
     <div class="CATALOGO izquierda">
   <a href="https://wa.me/523312281872?text=Hola,%20quiero%20más%20información.">
     <i class="fa fa-whatsapp"> CONTACTAME</i>
