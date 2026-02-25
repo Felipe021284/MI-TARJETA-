@@ -284,7 +284,7 @@ a{
 }
 
 /* Estilo de los enlaces con zoom constante */
-.CATALOGO a {
+.CATALOGO a  {
   display: inline-block;
   text-decoration: none;
   font-size: 1.2rem;
@@ -334,7 +334,22 @@ a{
   100% { transform: scale(1); }
 }
 
-
+audio {
+    display: none; /* oculta el reproductor */
+  }
+  
+  
+  button {
+  background: none;   /* sin fondo */
+  border: none;       /* sin borde */
+  color: #FFD700;     /* dorado elegante */
+  font-size: 18px;    /* tamaño de letra */
+  cursor: pointer;    /* mano al pasar */
+  text-decoration: underline; /* opcional, estilo de enlace */
+}
+button:hover {
+  color: #00BFFF;     /* azul ceremonial al pasar */
+  
   </style>
 </head>
 <body>
@@ -345,27 +360,65 @@ a{
     </div>
     
     <div class="description">
-    
-      
+    <audio controls autoplay>
+  <source src="https://dl.dropbox.com/scl/fi/49eacpxgv0tmsts97l530/Bogota-MP3_160K.mp3?rlkey=gk0ibk5ld4qde03maaiuz8soy&st=v99fbfsg&dl=1" type="audio/mpeg">
+  Tu navegador no soporta audio.
+</audio>
+      <!--h2>LUZNET</h2-->
       <h2 id="matrix-text" data-text="LUZNET"></h2>
       <h4 id="wave-text">DISEÑO WEB</h4>
-     
+      <!--h4>DISEÑO WEB</h4-->
+      <!--p>Invitaciones digitales que celebran cada momento … porque tus eventos merecen otro nivel.</p-->
       <p id="zoom-text">Invitaciones digitales que celebran cada momento ... porque tus eventos merecen otro nivel.</p>
       
     </div>
-   
+    <!--div class="contact">
+      <a href="tel:3312381872"><i class="fa fa-phone"></i></a>
+      <a href="https://wa.me/qr/K3HPFDZLSFINP1"><i class="fa fa-whatsapp"></i></a>
+      <a href="https://www.facebook.com/Digital-World-100310082725612/"><i class="fa fa-facebook"></i></a>
+      <a href="http://tiktok.com/@felipemartinez5483"><i class="fa fa-tiktok"></i></a>
+      <a href="https://www.instagram.com/invites/contact/?i=1qfx13l6t6gy5&utm_content=g1iuoqt"><i class="fa fa-instagram"></i></a>
+      <a href="https://youtube.com/c/FELIPEMARTINEZCOMPOSITOR"><i class="fa fa-youtube"></i></a>
+      <a href="mailto:felipemartinez84@live.com.mx?Subject=bienvenido"><i class="fa fa-envelope-open"></i></a>
+    </div-->
     
-    
+    <!--div class="CATALOGO">
+      <a href="https://wa.me/523312281872?text=Hola,%20quiero%20más%20información."><i class="fa fa-whatsapp"> CONTACTAME</i></a>
+</div>
+    <div class="CATALOGO">
+      <a href="https://felipe021284.github.io/INVITACI-N-DIGITAL/?v=2
+      "><i class="fa fa-hand-o-right"> CATALOGO</i></a>
+    </div-->
     <div class="CATALOGO izquierda">
-  <a href="https://wa.me/523312281872?text=Hola,%20quiero%20más%20información.">
-    <i class="fa fa-whatsapp"> CONTACTAME</i>
-  </a>
+  <script>
+function playAndGo(audioId, url, delay) {
+  const audio = document.getElementById(audioId);
+  audio.play(); // reproduce el audio
+  setTimeout(() => { window.location.href = url; }, delay); 
+  // espera el tiempo indicado antes de abrir el enlace
+}
+</script>
+
+
+<!-- Botón WhatsApp -->
+<button onclick="playAndGo('audioWhats','https://wa.me/523312281872?text=Hola,%20quiero%20más%20información.',1300)">
+   <i class="fa fa-whatsapp"> CONTACTAME</i>
+</button>
+<audio id="audioWhats" src="https://dl.dropbox.com/scl/fi/au60dp8p8pacd66hjkzwh/Luznet-1.mp3?rlkey=sra61i1nbnkbq6v7p3bmdt7lc&st=5qwfs0d7&dl=1
+"></audio>
 </div>
 
+
+
 <div class="CATALOGO derecha">
-  <a href="https://felipe021284.github.io/MI-CATALOGO-V2/">
-    <i class="fa fa-hand-o-right"> CATALOGO</i>
-  </a>
+<!-- Botón Catálogo -->
+<button onclick="playAndGo('audioCatalogo','https://felipe021284.github.io/INVITACI-N-DIGITAL/?v=2',1300)">
+  <i class="fa fa-hand-o-right"> CATALOGO</i>
+</button>
+<audio id="audioCatalogo" src="https://dl.dropbox.com/scl/fi/pyojk2qxhxrw5k5yzr3g6/Luznet-2.mp3?rlkey=trodms16zmu7ass4grkn8q1ng&st=agpspmra&dl=1
+"></audio>
+
+  
 </div>
   </div>
 
